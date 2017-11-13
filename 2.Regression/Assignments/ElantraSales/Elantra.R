@@ -1,0 +1,8 @@
+Elantra = read.csv("elantra.csv")
+ElantraTrain = subset(Elantra, Year <= 2012)
+ElantraTest = subset(Elantra, Year > 2012)
+ElantraLM = lm(ElantraSales ~ Unemployment + Queries + CPI_energy + CPI_all, data=ElantraTrain)
+ElantraLM = lm(ElantraSales ~ Unemployment + Queries + CPI_energy + CPI_all + Month, data=ElantraTrain)
+ElantraTrain$MonthFactor = as.factor(ElantraTrain$Month)
+ElantraTest$MonthFactor = as.factor(ElantraTest$Month)
+ElantraLM = lm(ElantraSales ~ Unemployment + Queries + CPI_energy + CPI_all + MonthFactor, data=ElantraTrain)
