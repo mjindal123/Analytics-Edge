@@ -1,0 +1,41 @@
+1.How many rows of data (observations) are in this dataset?
+
+191641
+
+Explanation
+If you type str(mvt) in the R console, the first row of output says that this is a data frame with 191,641 observations.
+=======================================================================================================================
+2.Using the "max" function, what is the maximum value of the variable "ID"?
+
+9181151
+Explanation
+You can compute the maximum value of the ID variable with max(mvt$ID).
+
+=================================================================================================================
+3.How many observations have value TRUE in the Arrest variable (this is the number of crimes for which an arrest was made)?
+
+15536
+Explanation
+If you type summary(mvt) in your R console, you can see the summary statistics for each variable. This shows that 15,536 observations fall under the category TRUE for the variable Arrest.
+
+===================================================================================================================
+4.How many observations have a LocationDescription value of ALLEY?
+
+2308
+Explanation
+If you type summary(mvt) in your R console, you can see the summary statistics for each variable. This shows that 2,308 observations fall under the category ALLEY for the variable LocationDescription. You can also read this from table(mvt$LocationDescription).
+
+=================================================================================================
+5.In many datasets, like this one, you have a date field. Unfortunately, R does not automatically recognize entries that look like dates. We need to use a function in R to extract the date and time. Take a look at the first entry of Date (remember to use square brackets when looking at a certain entry of a variable).
+
+In what format are the entries in the variable Date?
+
+
+Month/Day/Year Hour:Minute correct
+Day/Month/Year Hour:Minute
+Hour:Minute Month/Day/Year
+Hour:Minute Day/Month/Year
+Explanation
+If you type mvt$Date[1] in your R console, you can see that the first entry is 12/31/12 23:15. This must be in the format Month/Day/Year Hour:Minute.
+
+===============================================================================================================
